@@ -26,13 +26,12 @@ body {
 }
 
 aside {
-  width: 33%;
+  width: 45%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 2em;
 }
 aside .avatar {
   background-color: #875fd7;
@@ -70,7 +69,7 @@ aside .avatar {
 main {
   display: flex;
   flex-direction: column;
-  width: 66%;
+  width: 55%;
   height: 100%;
 }
 main section {
