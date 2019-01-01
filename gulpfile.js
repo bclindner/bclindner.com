@@ -52,6 +52,8 @@ gulp.task('img', () => {
     .pipe(bsync.stream())
 })
 
+gulp.task('build', parallel('html', 'css', 'img'))
+
 gulp.task('watch', series('build', () => {
   // start browsersync server
   bsync.init({
@@ -63,8 +65,6 @@ gulp.task('watch', series('build', () => {
   gulp.watch(paths.sass.src, series('css'))
   gulp.watch(paths.img.src, series('img'))
 }))
-
-gulp.task('build', parallel('html', 'css', 'img'))
 
 // deploy to github pages
 gulp.task('publish', series('build', () => {
