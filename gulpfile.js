@@ -32,53 +32,45 @@ const paths = {
 
 gulp.task('html', () => {
   return gulp.src(paths.pug.src)
-  // convert to html
     .pipe(pug())
-  // save to dest
     .pipe(gulp.dest(paths.pug.dest))
-  // notify browser-sync of file change
     .pipe(bsync.stream())
 })
 
 gulp.task('css', () => {
   return gulp.src(paths.sass.src)
-  // convert to css
     .pipe(sass())
-  // optimize css
     .pipe(cleanCSS())
-  // save to dest
     .pipe(gulp.dest(paths.sass.dest))
-  // notify browser-sync of the file change
     .pipe(bsync.stream())
 })
 
 gulp.task('img', () => {
   return gulp.src(paths.img.src)
-  // minify
     .pipe(imagemin())
-  // save to dest
     .pipe(gulp.dest(paths.img.dest))
-  // notify browser-sync of the file change
     .pipe(bsync.stream())
 })
-gulp.task('watch', () => {
+
+gulp.task('watch', series('build', () => {
   // start browsersync server
   bsync.init({
     server: {
       baseDir: destdir
     }
   })
-  // watch for html, css, and image changes
   gulp.watch(paths.pug.src, series('html'))
   gulp.watch(paths.sass.src, series('css'))
   gulp.watch(paths.img.src, series('img'))
-})
+}))
 
 gulp.task('build', parallel('html', 'css', 'img'))
 
+// deploy to github pages
 gulp.task('publish', series('build', () => {
   return gulp.src(pj(destdir, '**/*'))
     .pipe(ghpages())
 }))
+gulp.task('deploy', series('publish'))
 
 gulp.task('default', series('build'))
