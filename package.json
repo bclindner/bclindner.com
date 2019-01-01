@@ -4,11 +4,13 @@
   "description": "Brian Lindner's personal website.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "publish": "gulp publish"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bclindner/bclindner.github.io.git"
+    "url": "git+https://github.com/bclindner/bclindner.com.git"
   },
   "keywords": [
     "website",
@@ -17,13 +19,14 @@
   "author": "bclindner",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/bclindner/bclindner.github.io/issues"
+    "url": "https://github.com/bclindner/bclindner.com/issues"
   },
-  "homepage": "https://github.com/bclindner/bclindner.github.io#readme",
+  "homepage": "https://bclindner.com",
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "gh-pages": "^2.0.1",
     "gulp": "^4.0.0",
+    "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.0.0",
     "gulp-gh-pages": "^0.5.4",
     "gulp-htmlmin": "^5.0.1",

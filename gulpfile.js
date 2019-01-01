@@ -1,4 +1,6 @@
+// gulp core
 const gulp = require('gulp')
+// some aliases for qol
 const series = gulp.series
 const parallel = gulp.parallel
 // html
@@ -9,8 +11,9 @@ const cleanCSS = require('gulp-clean-css')
 // images
 const imagemin = require('gulp-imagemin')
 // utils
-const bsync = require('browser-sync')
 const pj = require('path').join // aliasing to pj for ease of use
+const bsync = require('browser-sync')
+const clean = require('gulp-clean')
 const ghpages = require('gulp-gh-pages')
 
 const srcdir = 'src'
@@ -52,7 +55,12 @@ gulp.task('img', () => {
     .pipe(bsync.stream())
 })
 
-gulp.task('build', parallel('html', 'css', 'img'))
+gulp.task('clean', () => {
+  return gulp.src(destdir, {read: false})
+    .pipe(clean())
+})
+
+gulp.task('build', series('clean', parallel('html', 'css', 'img')))
 
 gulp.task('watch', series('build', () => {
   // start browsersync server
@@ -65,9 +73,11 @@ gulp.task('watch', series('build', () => {
   gulp.watch(paths.sass.src, series('css'))
   gulp.watch(paths.img.src, series('img'))
 }))
+gulp.task('dev', series('watch'))
 
 // deploy to github pages
 gulp.task('publish', series('build', () => {
+  // add CNAME to the build so the redirect doesn't break when we push
   return gulp.src(pj(srcdir, 'CNAME'))
     .pipe(gulp.dest(destdir))
 }, () => {
