@@ -1,0 +1,33 @@
+{
+  "name": "bclindner.com",
+  "version": "1.0.0",
+  "description": "Brian Lindner's personal website.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bclindner/bclindner.github.io.git"
+  },
+  "keywords": [
+    "website",
+    "personal"
+  ],
+  "author": "bclindner",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/bclindner/bclindner.github.io/issues"
+  },
+  "homepage": "https://github.com/bclindner/bclindner.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gh-pages": "^2.0.1",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2"
+  }
+}

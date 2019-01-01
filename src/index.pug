@@ -1,0 +1,65 @@
+doctype html
+html(lang='en' dir='ltr')
+  head
+    meta(charset='UTF-8')
+    //- metadata
+    meta(name='description' content='Brian Lindner\'s personal Web site.')
+    meta(name='apple-mobile-web-app-capable' content='yes')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='canonical' href='https://bclindner.com')
+    title Brian!
+    //- icons
+    link(rel='icon' type='image/png' href='favicon.png')
+    link(rel='apple-touch-icon' href='img/avatar.png')
+    //- styles
+    link(href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet')
+    link(rel='stylesheet' href='css/main.css')
+  body
+    div.wrapper
+      div.flex
+        aside
+          //- sidebar with my name, avatar, and languages
+          //- click on each language to pull up my github repos for that language
+          h1.name Brian Lindner
+          img.avatar(src='img/avatar.png' alt='Picture of Brian Lindner')
+          div.languages
+            a(href='https://github.com/bclindner?tab=repositories&language=javascript')
+            img.langicon(src='img/logos/javascript.svg' alt='JS')
+
+            a(href='https://github.com/bclindner?tab=repositories&language=go')
+            img.langicon(src='img/logos/go.svg' alt='Go')
+
+            a(href='https://github.com/bclindner?tab=repositories&language=python')
+            img.langicon(src='img/logos/python.svg' alt='Py3')
+          // p.description Hi!
+        main
+          //- bar with each network i want to display w/ an icon and username. clicking provides a link
+          section
+            a(rel='me' href='https://github.com/bclindner')
+              img.icon(src='img/logos/github.svg' alt='GitHub')
+              h1.username @bclindner
+          hr
+          section
+            a(rel='me' href='https://gitlab.com/bclindner')
+              img.icon(src='img/logos/gitlab.svg' alt='GitLab')
+              h1.username @bclindner
+
+          hr
+          section
+            a(rel='me' href='https://linkedin.com/in/bclindner')
+              img.icon(src='img/logos/linkedin.svg' alt='LinkedIn')
+              h1.username /in/bclindner
+          hr
+          section
+            a(rel='me' href='mailto:brian@bclindner.com')
+              img.icon(src='img/logos/gmail.svg' alt='Email')
+              h1.username
+                | brian
+                wbr
+                | @bclindner.com
+      p.attribution
+        | Icons provided by
+        a(href='https://simpleicons.org/')  SimpleIcons.org
+        |  and
+        a(href='https://golang.org/')  the Go authors.
+    a(style='display: none;' rel='me' href='https://mastodon.technology/@bclindner') Mastodon
