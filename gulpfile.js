@@ -68,6 +68,9 @@ gulp.task('watch', series('build', () => {
 
 // deploy to github pages
 gulp.task('publish', series('build', () => {
+  return gulp.src(pj(srcdir, 'CNAME'))
+    .pipe(gulp.dest(destdir))
+}, () => {
   return gulp.src(pj(destdir, '**/*'))
     .pipe(ghpages())
 }))
