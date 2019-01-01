@@ -75,15 +75,17 @@ gulp.task('watch', series('build', () => {
 }))
 gulp.task('dev', series('watch'))
 
-// deploy to github pages
-gulp.task('publish', series('build', () => {
+gulp.task('move-cname', () => {
   // add CNAME to the build so the redirect doesn't break when we push
   return gulp.src(pj(srcdir, 'CNAME'))
     .pipe(gulp.dest(destdir))
-}, () => {
+})
+gulp.task('gh-pages', () => {
   return gulp.src(pj(destdir, '**/*'))
     .pipe(ghpages())
-}))
+})
+// deploy to github pages
+gulp.task('publish', series('build', 'move-cname', 'gh-pages'))
 gulp.task('deploy', series('publish'))
 
 gulp.task('default', series('build'))
