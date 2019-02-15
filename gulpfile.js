@@ -56,7 +56,7 @@ gulp.task('img', () => {
 })
 
 gulp.task('clean', () => {
-  return gulp.src(destdir, {read: false})
+  return gulp.src(destdir, {read: false, allowEmpty: true})
     .pipe(clean())
 })
 

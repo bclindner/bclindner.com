@@ -1,0 +1,15 @@
+---
+kind: pipeline
+name: rpi-default
+
+platform:
+  os: linux
+  arch: arm
+
+steps:
+- name: build
+  image: node
+  commands:
+  - npm install
+  - mkdir dist
+  - npx gulp
