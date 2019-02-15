@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: rpi-default
+name: default-arm
 
 platform:
   os: linux
