@@ -33,6 +33,7 @@ const paths = {
   }
 }
 
+// render all Pug to HTML
 gulp.task('html', () => {
   return gulp.src(paths.pug.src)
     .pipe(pug())
@@ -40,6 +41,7 @@ gulp.task('html', () => {
     .pipe(bsync.stream())
 })
 
+// Render all SASS to CSS
 gulp.task('css', () => {
   return gulp.src(paths.sass.src)
     .pipe(sass())
@@ -48,6 +50,7 @@ gulp.task('css', () => {
     .pipe(bsync.stream())
 })
 
+// Optimize images in the src dir
 gulp.task('img', () => {
   return gulp.src(paths.img.src)
     .pipe(imagemin())
@@ -55,13 +58,16 @@ gulp.task('img', () => {
     .pipe(bsync.stream())
 })
 
+// Clean the entire dist folder
 gulp.task('clean', () => {
   return gulp.src(destdir, {read: false, allowEmpty: true})
     .pipe(clean())
 })
 
+// Build batch job
 gulp.task('build', series('clean', parallel('html', 'css', 'img')))
 
+// Auto-refreshing dev server
 gulp.task('watch', series('build', () => {
   // start browsersync server
   bsync.init({
@@ -75,14 +81,15 @@ gulp.task('watch', series('build', () => {
 }))
 gulp.task('dev', series('watch'))
 
+// GitHub pages tasks
+gulp.task('gh-pages', () => {
+  return gulp.src(pj(destdir, '**/*'))
+    .pipe(ghpages())
+})
 gulp.task('move-cname', () => {
   // add CNAME to the build so the redirect doesn't break when we push
   return gulp.src(pj(srcdir, 'CNAME'))
     .pipe(gulp.dest(destdir))
-})
-gulp.task('gh-pages', () => {
-  return gulp.src(pj(destdir, '**/*'))
-    .pipe(ghpages())
 })
 // deploy to github pages
 gulp.task('publish', series('build', 'move-cname', 'gh-pages'))
