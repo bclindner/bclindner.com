@@ -24,9 +24,9 @@
   "homepage": "https://bclindner.com",
   "devDependencies": {
     "browser-sync": "^2.26.3",
+    "del": "^5.0.0",
     "gh-pages": "^2.0.1",
     "gulp": "^4.0.0",
-    "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.0.0",
     "gulp-gh-pages": "^0.5.4",
     "gulp-htmlmin": "^5.0.1",

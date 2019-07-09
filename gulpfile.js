@@ -13,8 +13,8 @@ const imagemin = require('gulp-imagemin')
 // utils
 const pj = require('path').join // aliasing to pj for ease of use
 const bsync = require('browser-sync')
-const clean = require('gulp-clean')
 const ghpages = require('gulp-gh-pages')
+const del = require('del')
 
 const srcdir = 'src'
 const destdir = 'dist'
@@ -56,8 +56,7 @@ gulp.task('img', () => {
 })
 
 gulp.task('clean', () => {
-  return gulp.src(destdir, {read: false})
-    .pipe(clean())
+  return del(['dist/*'])
 })
 
 gulp.task('build', series('clean', parallel('html', 'css', 'img')))
