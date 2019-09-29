@@ -10,10 +10,10 @@ html(lang='en' dir='ltr')
     title Brian!
     //- icons
     link(rel='icon' type='image/png' href='favicon.png')
-    link(rel='apple-touch-icon' href='img/avatar.png')
+    link(rel='apple-touch-icon' href='static/img/avatar.png')
     //- styles
     link(rel='stylesheet' media='screen' href='https://fontlibrary.org/face/montserrat' type='text/css')
-    link(rel='stylesheet' href='css/main.css')
+    link(rel='stylesheet' href='static/css/main.css')
   body
     div.wrapper
       div.flex
@@ -21,38 +21,38 @@ html(lang='en' dir='ltr')
           //- sidebar with my name, avatar, and languages
           //- click on each language to pull up my github repos for that language
           h1.name Brian Lindner
-          img.avatar(src='img/avatar.png' alt='Picture of Brian Lindner')
+          img.avatar(src='static/img/avatar.png' alt='Picture of Brian Lindner')
           div.languages
             a(href='https://github.com/bclindner?tab=repositories&language=javascript')
-              img.langicon(src='img/logos/javascript.svg' alt='JS')
+              img.langicon(src='static/img/logos/javascript.svg' alt='JS')
 
             a(href='https://github.com/bclindner?tab=repositories&language=go')
-              img.langicon(src='img/logos/go.svg' alt='Go')
+              img.langicon(src='static/img/logos/go.svg' alt='Go')
 
             a(href='https://github.com/bclindner?tab=repositories&language=python')
-              img.langicon(src='img/logos/python.svg' alt='Py3')
+              img.langicon(src='static/img/logos/python.svg' alt='Py3')
           // p.description Hi!
         main
           //- bar with each network i want to display w/ an icon and username. clicking provides a link
           section
             a(rel='me' href='https://github.com/bclindner')
-              img.icon(src='img/logos/github.svg' alt='GitHub')
+              img.icon(src='static/img/logos/github.svg' alt='GitHub')
               h1.username @bclindner
           hr
           section
             a(rel='me' href='https://gitlab.com/bclindner')
-              img.icon(src='img/logos/gitlab.svg' alt='GitLab')
+              img.icon(src='static/img/logos/gitlab.svg' alt='GitLab')
               h1.username @bclindner
 
           hr
           section
             a(rel='me' href='https://linkedin.com/in/bclindner')
-              img.icon(src='img/logos/linkedin.svg' alt='LinkedIn')
+              img.icon(src='static/img/logos/linkedin.svg' alt='LinkedIn')
               h1.username /in/bclindner
           hr
           section
             a(rel='me' href='mailto:brian@bclindner.com')
-              img.icon(src='img/logos/gmail.svg' alt='Email')
+              img.icon(src='static/img/logos/gmail.svg' alt='Email')
               h1.username
                 | brian
                 wbr
