@@ -16,12 +16,15 @@ html(lang='en' dir='ltr')
     link(rel='stylesheet' href='static/css/main.css')
   body
     div.wrapper
-      div.flex
+      div.h-card.flex
         aside
           //- sidebar with my name, avatar, and languages
           //- click on each language to pull up my github repos for that language
-          h1.name Brian Lindner
-          img.avatar(src='static/img/avatar.png' alt='Picture of Brian Lindner')
+          h1.p-name.name
+            span.p-given-name Brian
+            | 
+            span.p-family-name Lindner
+          img.u-photo.avatar(src='static/img/avatar.png' alt='Picture of Brian Lindner')
           div.languages
             a(href='https://github.com/bclindner?tab=repositories&language=javascript')
               img.langicon(src='static/img/logos/javascript.svg' alt='JS')
@@ -31,21 +34,21 @@ html(lang='en' dir='ltr')
 
             a(href='https://github.com/bclindner?tab=repositories&language=python')
               img.langicon(src='static/img/logos/python.svg' alt='Py3')
-          // p.description Hi!
+          //- p.description Hi!
         main
           //- bar with each network i want to display w/ an icon and username. clicking provides a link
           section
-            a(rel='me' href='https://github.com/bclindner')
+            a.u-url(rel='me' href='https://github.com/bclindner')
               img.icon(src='static/img/logos/github.svg' alt='GitHub')
               h1.username @bclindner
           hr
           section
-            a(rel='me' href='https://linkedin.com/in/bclindner')
+            a.u-url(rel='me' href='https://linkedin.com/in/bclindner')
               img.icon(src='static/img/logos/linkedin.svg' alt='LinkedIn')
               h1.username /in/bclindner
           hr
           section
-            a(rel='me' href='mailto:brian@bclindner.com')
+            a.u-email(rel='me' href='mailto:brian@bclindner.com')
               img.icon(src='static/img/logos/gmail.svg' alt='Email')
               h1.username
                 | brian
@@ -53,7 +56,7 @@ html(lang='en' dir='ltr')
                 | @bclindner.com
           hr
           section
-            a(rel='me' href='https://keybase.io/bclindner')
+            a.u-url(rel='me' href='https://keybase.io/bclindner')
               img.icon(src='static/img/logos/keybase.svg' alt='Keybase')
               h1.username @bclindner
       p.attribution
