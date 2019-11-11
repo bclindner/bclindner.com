@@ -30,6 +30,10 @@ const paths = {
   img: {
     src: pj(srcdir, "**/*.{png,jpg,svg,gif}"),
     dest: pj(destdir)
+  },
+  files: {
+    src: pj(srcdir, "static/files/**/*"),
+    dest: pj(destdir)
   }
 };
 
@@ -61,13 +65,21 @@ gulp.task("img", () => {
     .pipe(bsync.stream());
 });
 
+// Copy all files to the dist dir
+gulp.task("files", () => {
+  return gulp
+    .src(paths.files.src)
+    .pipe(gulp.dest(paths.files.dest))
+    .pipe(bsync.stream());
+});
+
 // Clean the entire dist folder
 gulp.task("clean", () => {
   return gulp.src(destdir, { read: false, allowEmpty: true }).pipe(clean());
 });
 
 // Build batch job
-gulp.task("build", series("clean", parallel("html", "css", "img")));
+gulp.task("build", series("clean", parallel("html", "css", "img", "files")));
 
 // Auto-refreshing dev server
 gulp.task(
@@ -82,6 +94,7 @@ gulp.task(
     gulp.watch(paths.pug.src, series("html"));
     gulp.watch(paths.sass.src, series("css"));
     gulp.watch(paths.img.src, series("img"));
+    gulp.watch(paths.files.src, series("files"));
   })
 );
 gulp.task("dev", series("watch"));

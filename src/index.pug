@@ -1,13 +1,15 @@
 doctype html
 html(lang='en' dir='ltr')
   head
+    title Brian!
     meta(charset='UTF-8')
-    //- metadata
+    //- metadata for robots
     meta(name='description' content='Brian Lindner\'s personal Web site.')
     meta(name='apple-mobile-web-app-capable' content='yes')
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(rel='canonical' href='https://bclindner.com')
-    title Brian!
+    //- metadata for nerdy robots
+    link(rel='pgpkey' type='application/pgp-keys' href='key.pub.asc')
     //- icons
     link(rel='icon' type='image/png' href='favicon.png')
     link(rel='apple-touch-icon' href='static/img/avatar.png')
@@ -28,14 +30,14 @@ html(lang='en' dir='ltr')
             img.u-photo.avatar(src='static/img/avatar.png' alt='Picture of Brian Lindner')
           div.languages
             a(href='https://github.com/bclindner?tab=repositories&language=javascript')
-              img.langicon(src='static/img/logos/javascript.svg' alt='JS')
+              img.p-skill.langicon(src='static/img/logos/javascript.svg' alt='JS')
 
             a(href='https://github.com/bclindner?tab=repositories&language=go')
-              img.langicon(src='static/img/logos/go.svg' alt='Go')
+              img.p-skill.langicon(src='static/img/logos/go.svg' alt='Go')
 
             a(href='https://github.com/bclindner?tab=repositories&language=python')
-              img.langicon(src='static/img/logos/python.svg' alt='Py3')
-          //- p.description Hi!
+              img.p-skill.langicon(src='static/img/logos/python.svg' alt='Py3')
+          p.p-summary.description Software engineer.
         main
           //- bar with each network i want to display w/ an icon and username. clicking provides a link
           section
@@ -60,6 +62,22 @@ html(lang='en' dir='ltr')
             a.u-url(rel='me' href='https://keybase.io/bclindner')
               img.icon(src='static/img/logos/keybase.svg' alt='Keybase')
               h1.username @bclindner
+          // nosy one, aren't we?
+          // fine - here's some more links:
+          hr.hide
+          section.hide
+            a.u-email(rel='me' href='https://mastodon.technology')
+              img.icon(src='static/img/logos/mastodon.svg' alt='Email')
+              h1.username
+                | @bclindner
+                wbr
+                | @mastodon.technology
+          hr.hide
+          section.hide
+            a(href='/key.pub')
+              img.icon(src='static/img/logos/gnuprivacyguard.svg' alt='PGP public key')
+              h1.username
+                AA99 417F 7F65 2506
       p.attribution
         | Icons provided by
         a(href='https://simpleicons.org/')  SimpleIcons.org
