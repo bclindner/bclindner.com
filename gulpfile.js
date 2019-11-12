@@ -33,7 +33,7 @@ const paths = {
   },
   files: {
     src: pj(srcdir, "static/files/**/*"),
-    dest: pj(destdir)
+    dest: pj(destdir, "static/files")
   }
 };
 
