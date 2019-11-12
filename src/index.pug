@@ -8,7 +8,7 @@ html(lang='en' dir='ltr')
     include _mixins/langicon
   body
     div.wrapper
-      div.h-card.flex
+      div.h-card.h-resume.flex
         aside
           //- sidebar with my name, avatar, and languages
           //- click on each language to pull up my github repos for that language
@@ -22,7 +22,7 @@ html(lang='en' dir='ltr')
             +langicon("javascript", "javascript", "JS")
             +langicon("go", "go", "Go")
             +langicon("python", "python", "Py3")
-          p.p-summary.description Software engineer.
+          p.p-summary.p-note.description Software engineer.
         main
           //- bar with each network i want to display w/ an icon and username. clicking provides a link
           +cardlink("https://github.com/bclindner", "github", "GitHub")
