@@ -1,25 +1,23 @@
-<script type="application/ld+json">
 [
 	{
 		"@context": "http://schema.org/",
 		"@type": "Person",
 		"name": "Brian Cory Stephen Lindner",
 		"givenName": "Brian",
-		"familyName": "Lindner"
+		"familyName": "Lindner",
 		"additionalName": ["Brian!", "bclindner"],
+		"gender": "Male",
+		"knowsLanguage": "English",
 		"description": "Software engineer.",
-		"image": "/static/img/avatar.png",
+		"image": "https://bclindner.com/static/img/avatar.png",
 		"email": "brian@bclindner.com",
 		"url": "https://bclindner.com",
+		"nationality": "US",
+		"jobTitle": "Software Engineer",
 		"alumniOf": {
 			"@type": "EducationalOrganization",
 			"name": "Georgia Southern University",
 			"url": "https://www.georgiasouthern.edu"
 		}
-		"hasOccupation": {
-			"@type": "Occupation",
-			"name": "Software Engineer"
-		}
 	}
 ]
-</script>
