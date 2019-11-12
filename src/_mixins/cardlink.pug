@@ -1,7 +1,7 @@
-mixin cardlink(cardurl, logo, alt, microformats)
+mixin cardlink(cardurl, logo, alt, microformats="u-url")
   hr
   section
-    a.u-url(rel='me' href=cardurl)
+    a(rel='me' href=cardurl class=microformats)
       img.icon(src='static/img/logos/'+logo+'.svg' alt=alt)
       if block
         h1.username
