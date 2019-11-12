@@ -32,8 +32,8 @@ const paths = {
     dest: pj(destdir)
   },
   files: {
-    src: pj(srcdir, "static/files/**/*"),
-    dest: pj(destdir, "static/files")
+    src: pj(srcdir, "/**/*{.txt,.asc,.pub,CNAME}"),
+    dest: pj(destdir)
   }
 };
 
