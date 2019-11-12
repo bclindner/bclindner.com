@@ -2,20 +2,10 @@ doctype html
 html(lang='en' dir='ltr')
   head
     title Brian!
-    meta(charset='UTF-8')
-    //- metadata for robots
-    meta(name='description' content='Brian Lindner\'s personal Web site.')
-    meta(name='apple-mobile-web-app-capable' content='yes')
-    meta(name='viewport' content='width=device-width, initial-scale=1')
-    link(rel='canonical' href='https://bclindner.com')
-    //- metadata for nerdy robots
-    link(rel='pgpkey' type='application/pgp-keys' href='key.pub.asc')
-    //- icons
-    link(rel='icon' type='image/png' href='favicon.png')
-    link(rel='apple-touch-icon' href='static/img/avatar.png')
-    //- styles
-    link(rel='stylesheet' media='screen' href='https://fontlibrary.org/face/montserrat' type='text/css')
-    link(rel='stylesheet' href='static/css/main.css')
+    include _partials/meta
+    include _partials/style/main
+    include _mixins/cardlink
+    include _mixins/langicon
   body
     div.wrapper
       div.h-card.flex
@@ -29,55 +19,31 @@ html(lang='en' dir='ltr')
           a.u-url(href="https://bclindner.com")
             img.u-photo.avatar(src='static/img/avatar.png' alt='Picture of Brian Lindner')
           div.languages
-            a(href='https://github.com/bclindner?tab=repositories&language=javascript')
-              img.p-skill.langicon(src='static/img/logos/javascript.svg' alt='JS')
-
-            a(href='https://github.com/bclindner?tab=repositories&language=go')
-              img.p-skill.langicon(src='static/img/logos/go.svg' alt='Go')
-
-            a(href='https://github.com/bclindner?tab=repositories&language=python')
-              img.p-skill.langicon(src='static/img/logos/python.svg' alt='Py3')
+            +langicon("javascript", "javascript", "JS")
+            +langicon("go", "go", "Go")
+            +langicon("python", "python", "Py3")
           p.p-summary.description Software engineer.
         main
           //- bar with each network i want to display w/ an icon and username. clicking provides a link
-          section
-            a.u-url(rel='me' href='https://github.com/bclindner')
-              img.icon(src='static/img/logos/github.svg' alt='GitHub')
-              h1.username @bclindner
-          hr
-          section
-            a.u-url(rel='me' href='https://linkedin.com/in/bclindner')
-              img.icon(src='static/img/logos/linkedin.svg' alt='LinkedIn')
-              h1.username /in/bclindner
-          hr
-          section
-            a.u-email(rel='me' href='mailto:brian@bclindner.com')
-              img.icon(src='static/img/logos/gmail.svg' alt='Email')
-              h1.username
-                | brian
-                wbr
-                | @bclindner.com
-          hr
-          section
-            a.u-url(rel='me' href='https://keybase.io/bclindner')
-              img.icon(src='static/img/logos/keybase.svg' alt='Keybase')
-              h1.username @bclindner
-          // nosy one, aren't we?
-          // fine - here's some more links:
-          hr.hide
-          section.hide
-            a.u-email(rel='me' href='https://mastodon.technology')
-              img.icon(src='static/img/logos/mastodon.svg' alt='Email')
-              h1.username
-                | @bclindner
-                wbr
-                | @mastodon.technology
-          hr.hide
-          section.hide
-            a(href='/key.pub')
-              img.icon(src='static/img/logos/gnuprivacyguard.svg' alt='PGP public key')
-              h1.username
-                AA99 417F 7F65 2506
+          +cardlink("https://github.com/bclindner", "github", "GitHub")
+            | @bclindner
+          +cardlink("https://linkedin.com/in/bclindner", "linkedin", "LinkedIn")
+            | /in/bclindner
+          +cardlink("mailto:brian@bclindner.com", "gmail", "Email")
+            | brian
+            wbr
+            | @bclindner.com
+          +cardlink("https://keybase.io/bclindner", "keybase", "Keybase")
+            | @bclindner
+          // either you're nosy, or you're a robot.
+          // either way, here's some more places you can find me
+          div.secret
+            +cardlink("https://mastodon.technology/@bclindner", "mastodon", "Mastodon")
+              | @bclindner
+              wbr
+              | @mastodon.technology
+            +dummycardlink("gnuprivacyguard", "PGP public key")
+              | AA99 417F 7F65 2506
       p.attribution
         | Icons provided by
         a(href='https://simpleicons.org/')  SimpleIcons.org

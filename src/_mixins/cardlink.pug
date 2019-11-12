@@ -1,0 +1,21 @@
+mixin cardlink(cardurl, logo, alt, microformats)
+  hr
+  section
+    a.u-url(rel='me' href=cardurl)
+      img.icon(src='static/img/logos/'+logo+'.svg' alt=alt)
+      if block
+        h1.username
+          block
+      else
+        h1.username=alt
+
+mixin dummycardlink(logo, alt)
+  hr
+  section
+    span
+      img.icon(src='static/img/logos/'+logo+'.svg' alt=alt)
+      if block
+        h1.username
+          block
+      else
+        h1.username=alt

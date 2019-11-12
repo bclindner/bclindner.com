@@ -24,7 +24,7 @@ const paths = {
     dest: pj(destdir)
   },
   pug: {
-    src: pj(srcdir, "**/*.pug"),
+    src: [pj(srcdir, "**/*.pug"), "!"+pj(srcdir, '**/_*/**/*')],
     dest: pj(destdir)
   },
   img: {
