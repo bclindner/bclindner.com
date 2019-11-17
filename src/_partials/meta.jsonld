@@ -1,23 +1,30 @@
 [
-	{
-		"@context": "http://schema.org/",
-		"@type": "Person",
-		"name": "Brian Cory Stephen Lindner",
-		"givenName": "Brian",
-		"familyName": "Lindner",
-		"additionalName": ["Brian!", "bclindner"],
-		"gender": "Male",
-		"knowsLanguage": "English",
-		"description": "Software engineer.",
-		"image": "https://bclindner.com/static/img/avatar.png",
-		"email": "brian@bclindner.com",
-		"url": "https://bclindner.com",
-		"nationality": "US",
-		"jobTitle": "Software Engineer",
-		"alumniOf": {
-			"@type": "EducationalOrganization",
-			"name": "Georgia Southern University",
-			"url": "https://www.georgiasouthern.edu"
-		}
-	}
+  {
+    "@context": "http://schema.org/",
+    "@type": "Person",
+    "name": "Brian Cory Stephen Lindner",
+    "givenName": "Brian",
+    "familyName": "Lindner",
+    "additionalName": ["Brian!", "bclindner"],
+    "gender": "Male",
+    "knowsLanguage": "English",
+    "description": "Software engineer.",
+    "image": "https://bclindner.com/static/img/avatar.png",
+    "email": "brian@bclindner.com",
+    "url": "https://bclindner.com",
+    "nationality": "US",
+    "jobTitle": "Software Engineer",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Georgia Southern University",
+      "url": "https://www.georgiasouthern.edu"
+    },
+    "sameAs": [
+      "https://github.com/bclindner",
+      "https://gitlab.com/bclindner",
+      "https://linkedin.com/in/bclindner",
+      "https://keybase.io/bclindner",
+      "https://mastodon.technology/@bclindner"
+    ]
+  }
 ]
